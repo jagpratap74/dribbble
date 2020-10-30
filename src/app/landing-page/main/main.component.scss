@@ -1,0 +1,205 @@
+@import "../../../shared/scss/variable";
+@import "../../../shared/scss/defaults";
+
+
+.main {
+    padding: 2em 0;
+
+    .subNav {
+        @include flex;  
+    }
+}
+
+/************************************/
+/****    SUBNAV   ****/
+/************************************/
+
+.subNav-left {
+    .drop-down {
+        @include flex;
+
+        border: 1px solid #a9a8b0;
+        padding: 0.7em;
+        border-radius: 0.4em;
+
+        p {
+            margin-right: 1.5em;
+        }
+    }
+}
+
+.subNav-middle {
+    .subNav-items {
+        @include flex;
+
+        li {
+            margin: 0 1em;
+        }
+    }
+}
+
+.subNav-right {
+    .filters {
+        @include flex;
+
+        border: 1px solid #a9a8b0;
+        padding: 0.7em;
+        border-radius: 0.4em;
+
+        p {
+            margin-left: 0.8em;
+            color: $text-color;
+        }
+    }
+}
+
+.tablet-subNav {
+    display: none;
+}
+
+
+/************************************/
+/****    CARDS  ****/
+/************************************/
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-gap: 36px;
+
+    margin-top: 2em;
+}
+
+.card {
+    .card-banner img {
+        border-radius: 0.5em;
+    }
+
+    .card-footer {
+        @include flex;
+        margin-top: 0.5em;
+    }
+}
+
+.card-footer-left {
+    @include flex;
+
+    img {
+        border-radius: 50%;
+        margin-right: 0.5em;
+    }
+
+    p {
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+
+    .tag {
+        font-size: 0.6rem;
+        font-weight: 700;
+        background: #cccccc;
+        padding: 0.2em;
+        color: #fff;
+        border-radius: 0.2em;
+    }
+}
+
+.card-footer-right {
+    @include flex;
+    font-size: 0.9rem;
+    color: #cccccc;
+
+    .comment, .like {
+        margin-left: 0.5em;
+
+        svg {
+            fill: #cccccc;
+            margin-right: 0.3em;
+            padding-top: 0.2em;
+        }
+    }
+}
+
+/**************/
+// SUBSCRIBE
+
+.subscribe {
+    @include flex;
+    justify-content: center;
+    margin-top: 4em;
+
+    .sign {
+        margin: 0 2em;
+    }
+
+    .sign-up {
+        display: inline-block;
+        padding: 0.7em 2em;
+        border-radius: 0.3em;
+        background: $secondary-color;
+
+        &:hover {
+            background: $hover-color;
+        }
+
+        a {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+
+
+/************************************/
+/****    MEDIA-QUERY  ****/
+/************************************/
+
+@media (max-width: 1200px) {
+    .subNav-middle {
+        .subNav-items {
+            li {
+                margin: 0 0.5em;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .subNav-middle {
+        display: none;
+    }
+
+    .tablet-subNav {
+        display: block;
+        margin-top: 1.25em;
+        border-top: 1px solid #0000000f;
+
+        .tablet-subNav-items {
+            @include flex;
+            padding-top: 1em;
+    
+            li {
+                margin: 0;
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 768px) {
+    .tablet-subNav {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .tablet-subNav {
+        display: none;
+        border: none;
+    }
+}

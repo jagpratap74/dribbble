@@ -1,0 +1,64 @@
+<section class="main">
+    <div class="row">
+        <div class="subNav">
+            <div class="subNav-left">
+                <a class="drop-down" href="#!">
+                    <p>Popular</p>
+                    <svg width="0.7em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="subNav-middle">
+                <ul class="subNav-items" style="list-style: none;">
+                    <li *ngFor="let item of subNav"><a href="#!">{{ item }}</a></li>
+                </ul>
+            </div>
+            <div class="subNav-right">
+                <a class="filters" href="#!">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-filter" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                      </svg>
+                    <p>Filters</p>
+                </a>
+            </div>
+        </div>
+        <div class="tablet-subNav">
+            <ul class="tablet-subNav-items" style="list-style: none;">
+                <li *ngFor="let item of subNav"><a href="#!">{{ item }}</a></li>
+            </ul>
+        </div>
+        <div class="cards-container">
+            <div *ngFor="let card of cardList">
+                <div class="card">
+                    <div class="card-banner">
+                        <img width="100%" src="{{ card.bannerImg }}" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer-left">
+                            <img width="25px" src="{{ card.logo }}" alt="logo">
+                            <p>{{ card.title }}</p>
+                            <p class="tag">{{ card.tag }}</p>
+                        </div>
+                        <div class="card-footer-right">
+                            <div class="comment">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+                                      </svg>{{ card.comment }}
+                            </div>
+                            <div class="like">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                    </svg>{{ card.like }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subscribe">
+            <div class="sign sign-up"><a href="#!">Sign up to continue</a></div>
+            <div class="sign sign-in"><a href="#!">or sign in</a></div>
+        </div>
+    </div>
+</section>

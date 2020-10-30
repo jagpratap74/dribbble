@@ -1,0 +1,203 @@
+@import "../../../shared/scss/variable";
+@import "../../../shared/scss/defaults";
+
+/********************************************/
+/*****   HEADER   *****/
+/********************************************/
+
+header {
+    padding: 1.5em 0; 
+    border-bottom: 1px solid #0000000f;
+    position: relative;
+    
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    } 
+}
+
+/***** Nav *****/
+
+.nav {
+    @include flex;
+
+    .burger  {
+        display: none;
+
+        div {
+            content: "";
+            margin: 0.3em 0;
+            width: 20px;
+            height: 2px;
+            background: #6e6d7a;
+            @include transition;
+
+        }
+
+        .rotateAc {
+            transform: rotate(45deg);
+            position: relative;
+            top: 4px;
+        }
+
+        .remove {
+            display: none;
+        }
+
+        .rotateC {
+            transform: rotate(-45deg);
+            position: relative;
+            top: -3.4px;
+        }
+    }
+
+    .header-left {
+        @include flex;
+
+        .nav-brand {
+            margin-right: 1em;
+
+            svg:hover {
+                fill: $primary-color;
+            }
+        }
+    }
+
+    .header-right {
+        @include flex;
+
+        .search svg {
+            color: $primary-color;
+        }
+
+        .sign {
+            margin-left: 1.2em;
+        }
+
+        .sign-up {
+            padding: 0.7em;
+            border-radius: 0.3em;
+            background: $secondary-color;
+
+            &:hover {
+                background: $hover-color;
+            }
+
+            a {
+                color: #ffffff;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+        }
+
+    }
+}
+
+/***** Nav-Items *****/
+
+.nav-items {
+    @include flex;
+
+    li {
+        margin: 0 1em;
+
+        a {
+            font-weight: 700;
+            font-size: 0.9rem;
+
+            span svg {
+                padding-top: 0.4em;
+            }
+
+            &:hover, &:focus {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+/***** Mobile-Nav *****/
+
+.mobile-nav {
+    position: absolute;
+    width: 100%;
+    display: none;
+    top: 3.3rem;
+    background: #fff;
+
+    .form-search {
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        span {
+            position: absolute;
+            left: 1rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.6em;
+            padding-left: 2.5em;
+            background: #f3f3f4;
+            border-radius: 0.5em;
+            border: none;
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .mobile-nav-items {
+
+        a {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: block;
+            padding: 0.7em 0;
+
+            svg {
+                float: right;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 920px) {
+    header {
+        padding: 1em 0; 
+    }
+
+    .nav {
+        .burger {
+            display: block;
+        }
+
+        .header-left {
+            .nav-brand {
+                margin-right: 0;
+            }
+        }
+
+        .header-right {
+            .sign {
+                margin-left: 0;
+            }
+
+            .search, .sign-up {
+                display: none;
+            }
+        }
+    }
+
+    .nav-items {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+}

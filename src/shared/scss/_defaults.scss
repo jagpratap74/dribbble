@@ -1,0 +1,23 @@
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin transition {
+    transition: all 0.2s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+.row {
+    padding: 0 5em;
+
+    @media (max-width: 1200px) {
+        padding: 0 2em;
+    }
+}

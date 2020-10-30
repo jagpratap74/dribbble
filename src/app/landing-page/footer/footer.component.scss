@@ -1,0 +1,119 @@
+@import "../../../shared/scss/variable";
+@import "../../../shared/scss/defaults";
+
+footer {
+    background: $bg-color;
+    color: $primary-color;
+    padding: 2.5em 0;
+    font-size: 0.9rem;
+}
+
+.container {
+    @include flex;
+    align-items: flex-start;
+}
+
+.brand {
+    width: 20%;
+
+    .brand-logo {
+        margin-bottom: 1em;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    .social-links {
+        a {
+            margin-right: 1em;
+        }
+    }
+}
+
+.links-container {
+    width: 60%;
+    @include flex;
+    align-items: flex-start;
+    padding: 0 1.5em;
+    flex-wrap: wrap;
+
+    .links-column {
+
+        .link-title {
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+
+        .links  {
+            a {
+                display: block;
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
+
+.market {
+    width: 20%;
+
+    img {
+        width: 150px;
+    }
+
+    div {
+        .text {
+            font-size: 0.9rem;
+            padding-bottom: 1em;
+        }
+    
+        .advertise {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+    }
+
+}
+
+@media (max-width: 1140px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .brand {
+        width: 30%;
+        min-width: 250px;
+    }
+
+    .links-container {
+        min-width: 80%;
+        margin-top: 2em;
+        padding: 0;
+    }
+
+    .market {
+        width: 30%;
+        min-width: 250px;
+        @include flex;
+
+        img {
+            width: 100px;
+            margin-right: 1em;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .links-container {
+        min-width: 80%;
+        margin-top: 2em;
+        padding: 0;
+    }
+}
+

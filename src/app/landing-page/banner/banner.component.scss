@@ -1,0 +1,110 @@
+@import "../../../shared/scss/variable";
+@import "../../../shared/scss/defaults";
+
+
+.banner {
+    min-height: 480px;
+    background: $bg-color;
+    @include flex;
+
+    .container {
+        @include flex;
+    }
+}
+
+.banner-text {
+    flex: 1;
+    h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 3.2rem;
+        color: $text-color;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: $text-color;
+        padding: 1em 0;
+    }
+
+    .sign-up {
+        display: inline-block;
+        padding: 0.7em;
+        border-radius: 0.3em;
+        background: $secondary-color;
+        cursor: pointer;
+
+        &:hover {
+            background: $hover-color;
+        }
+
+        a {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.banner-hero {
+    flex: 1;
+    text-align: end;
+    img {
+        width: 510px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 1200px) {
+    
+    .banner {    
+        .container {
+            padding: 4em 0;
+        }
+    }
+
+    .banner-text {
+        h1 {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+    }
+
+    .banner-hero {
+        img {
+            width: 400px;
+            height: 266px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .row {
+        width: 100%;
+    }
+
+    .banner {
+        .container {
+            flex-direction: column-reverse;
+            padding: 2.5em 0;
+        }
+    }
+
+    .banner-text {
+        max-width: 580px;
+        text-align: center;
+        margin-top: 2em;
+
+        h1 {
+            font-size: 1.5rem;
+            line-height: 1.6rem;
+        }
+    }
+
+    .banner-hero {
+        img {
+            height: 300px;
+        }
+    }
+}
